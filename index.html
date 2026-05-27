@@ -1,106 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>About Me - Pavan kumar Gamini</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        max-width: 800px;
-        margin: 40px auto;
-        padding: 0 20px;
-        line-height: 1.6;
-        background-color: yellow; /* Background colour using spelling */
-      }
-      header {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      h1 {
-        margin-bottom: 5px;
-      }
-      h2 {
-        margin-top: 30px;
-      }
-      .tagline {
-        color: #555;
-        font-size: 0.95rem;
-      }
-      .highlight {
-        font-weight: bold;
-      }
-      ul {
-        padding-left: 18px;
-      }
-      footer {
-        margin-top: 40px;
-        text-align: center;
-        font-size: 0.85rem;
-        color: #777;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Hi, I'm Pavan 👋</h1>
-      <p class="tagline">
-        Cloud & DevOps Enthusiast | Future DevOps Engineer | AWS & Azure Certified
-      </p>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pavan | Cloud & DevOps Engineer</title>
 
-    <section>
-      <h2>About Me</h2>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    /* Navbar */
+
+    nav{
+      width:100%;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:#111827;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    nav h1{
+      color:#38bdf8;
+      font-size:28px;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav ul li a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    /* Hero Section */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:120px 10%;
+      background:linear-gradient(to right,#0f172a,#1e293b);
+    }
+
+    .hero-container{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    .hero-text{
+      flex:1;
+    }
+
+    .hero-text h3{
+      color:#38bdf8;
+      margin-bottom:10px;
+      font-size:24px;
+    }
+
+    .hero-text h1{
+      font-size:60px;
+      margin-bottom:20px;
+      line-height:1.2;
+    }
+
+    .hero-text p{
+      font-size:18px;
+      line-height:1.8;
+      color:#cbd5e1;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 35px;
+      background:#38bdf8;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      transition:0.3s;
+      font-weight:600;
+    }
+
+    .btn:hover{
+      background:#0284c7;
+      transform:translateY(-3px);
+    }
+
+    .hero-image{
+      flex:1;
+      text-align:center;
+    }
+
+    .hero-image img{
+      width:350px;
+      border-radius:50%;
+      border:5px solid #38bdf8;
+      box-shadow:0 0 40px rgba(56,189,248,0.4);
+    }
+
+    /* Section */
+
+    section{
+      padding:100px 10%;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:42px;
+      margin-bottom:60px;
+      color:#38bdf8;
+    }
+
+    /* About */
+
+    .about{
+      background:#111827;
+      border-radius:20px;
+      padding:50px;
+      line-height:1.9;
+      color:#d1d5db;
+      box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Skills */
+
+    .skills-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .skill-box{
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .skill-box:hover{
+      transform:translateY(-10px);
+      background:#334155;
+    }
+
+    .skill-box h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    /* Work */
+
+    .work{
+      background:#111827;
+      border-radius:20px;
+      padding:50px;
+      color:#d1d5db;
+      line-height:1.9;
+      box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Contact */
+
+    .contact-container{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+
+    .contact-card{
+      background:#1e293b;
+      padding:30px;
+      width:320px;
+      border-radius:20px;
+      text-align:center;
+      transition:0.3s;
+      box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .contact-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .contact-card a{
+      color:#38bdf8;
+      text-decoration:none;
+      word-break:break-all;
+    }
+
+    /* Footer */
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#020617;
+      color:#94a3b8;
+    }
+
+    /* Responsive */
+
+    @media(max-width:900px){
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      .hero-container{
+        flex-direction:column-reverse;
+        text-align:center;
+      }
+
+      nav{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        gap:15px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+
+  <nav>
+
+    <h1>Pavan</h1>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- Hero Section -->
+
+  <section class="hero">
+
+    <div class="hero-container">
+
+      <div class="hero-text">
+
+        <h3>Hello, I'm</h3>
+
+        <h1>Pavan 👋</h1>
+
+        <p>
+          Cloud & DevOps Enthusiast | Future DevOps Engineer |
+          AWS & Azure Certified
+        </p>
+
+        <a href="#contact" class="btn">Connect With Me</a>
+
+      </div>
+
+      <div class="hero-image">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- About -->
+
+  <section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about">
+
       <p>
-        I am passionate about <span class="highlight">Cloud Computing, DevOps, and Cyber Security</span>.
-        I enjoy learning new technologies, building hands-on projects, and
-        sharing knowledge through YouTube and other platforms.
+        I am passionate about Cloud Computing, DevOps, and Cyber Security.
+        I enjoy learning new technologies, building hands-on projects,
+        and sharing knowledge through YouTube and other platforms.
       </p>
+
+      <br>
+
       <p>
-        My goal is to become a strong <span class="highlight">Cloud / DevOps Engineer</span> and
-        work on real-world production systems, automation, and CI/CD pipelines.
+        My goal is to become a strong Cloud / DevOps Engineer and work
+        on real-world production systems, automation, and CI/CD pipelines.
       </p>
-    </section>
 
-    <section>
-      <h2>Skills & Certifications</h2>
-      <ul>
-        <li>AWS Certified Solutions Architect – Associate</li>
-        <li>AWS Certified Cloud Practitioner</li>
-        <li>Microsoft Azure Fundamentals (AZ-900)</li>
-        <li>Linux, Networking, and basic Security concepts</li>
-        <li>Git, GitHub, and basic CI/CD & DevOps tools</li>
-      </ul>
-    </section>
+    </div>
 
-    <section>
-      <h2>What I'm Working On</h2>
-      <ul>
-        <li>Improving my DevOps skills with Terraform, CI/CD, and monitoring</li>
-        <li>Building and hosting cloud projects on AWS</li>
-        <li>Creating content to help beginners learn IT and Cloud</li>
-      </ul>
-    </section>
+  </section>
 
-    <section>
-      <h2>Contact</h2>
+  <!-- Skills -->
+
+  <section id="skills">
+
+    <h2 class="section-title">Skills & Certifications</h2>
+
+    <div class="skills-container">
+
+      <div class="skill-box">
+        <h3>AWS Certified</h3>
+        <p>Solutions Architect – Associate</p>
+      </div>
+
+      <div class="skill-box">
+        <h3>AWS CCP</h3>
+        <p>Cloud Practitioner</p>
+      </div>
+
+      <div class="skill-box">
+        <h3>Microsoft Azure</h3>
+        <p>AZ-900 Fundamentals</p>
+      </div>
+
+      <div class="skill-box">
+        <h3>Linux & Networking</h3>
+        <p>Basic Security Concepts</p>
+      </div>
+
+      <div class="skill-box">
+        <h3>Git & GitHub</h3>
+        <p>Version Control & Collaboration</p>
+      </div>
+
+      <div class="skill-box">
+        <h3>DevOps</h3>
+        <p>CI/CD & Automation Basics</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Work -->
+
+  <section id="work">
+
+    <h2 class="section-title">What I'm Working On</h2>
+
+    <div class="work">
+
       <p>
-        You can visit my website or GitHub profile to see my projects:
+        ✔ Improving my DevOps skills with Terraform, CI/CD, and Monitoring
       </p>
-      <ul>
-        <li>Website: <span class="highlight">https://cloud-resume-nine.vercel.app/</span></li>
-        <li>GitHub: <span class="highlight">https://github.com/hajumer</span></li>
-      </ul>
-    </section>
 
-    <footer>
-      &copy; <span id="year"></span> Hajra. All rights reserved.
-    </footer>
+      <br>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+      <p>
+        ✔ Building and hosting cloud projects on AWS
+      </p>
+
+      <br>
+
+      <p>
+        ✔ Creating content to help beginners learn IT and Cloud
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+
+  <section id="contact">
+
+    <h2 class="section-title">Contact</h2>
+
+    <div class="contact-container">
+
+      <div class="contact-card">
+
+        <h3>🌐 Website</h3>
+
+        <br>
+
+        <a href="https://cloud-resume-nine.vercel.app/" target="_blank">
+          cloud-resume-nine.vercel.app
+        </a>
+
+      </div>
+
+      <div class="contact-card">
+
+        <h3>💻 GitHub</h3>
+
+        <br>
+
+        <a href="https://github.com/hajumer" target="_blank">
+          github.com/hajumer
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    © 2026 Pavan. All rights reserved.
+
+  </footer>
+
+</body>
 </html>
-
-
